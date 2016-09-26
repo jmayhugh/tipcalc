@@ -35,9 +35,11 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 I had trouble centering the UI elements on the app screen. This is my first attempt at using XCode or writing Swift, so I'm just not sure how to do this yet.
 
+I also attempted to do a locale-specific currency and  thousands seperator, but I found I couldn't get it to work in the available time, so I ended up removing this code.
+
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2016 Julia Mayhugh
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
