@@ -10,10 +10,18 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var defaultTipControl: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let defaults = UserDefaults.standard
+        let defaultTip = defaults.integer(forKey: "defaultTip")
+        if defaultTip != 0 {
+            defaultTipControl.selectedSegmentIndex = defaultTip
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +29,14 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func updateDefaultTip(_ sender: AnyObject) {
+        
+        let defaults = UserDefaults.standard
+        defaults.set(defaultTipControl.selectedSegmentIndex, forKey: "defaultTip")
+        print(defaultTipControl.selectedSegmentIndex)
+        defaults.synchronize()
+        
+    }
 
     /*
     // MARK: - Navigation
